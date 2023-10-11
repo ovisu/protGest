@@ -16,16 +16,21 @@
 			<p class="logo">Santos</p>
 
 			<ul>
-				<li>INICIO</li>
-				<li>FOTOS</li>
-				<li>CONTATO</li>
+				<li><a href="#inicio" class="inicio">INICIO</a></li>
+				<li><a href="#fotos" class="foto">FOTOS</a></li>
+				<li><a href="#contato" class="contato">CONTATO</a></li>
 			</ul>
 		</nav>
 	</header>
 	<main>
+		<div id="inicio"></div>
 		<div class="alinha-img">
-			<img id="teste" src="./img/arrow.svg">
-			<p>Conheça nossos hotéis</p>
+			<a href="#fotos">
+				<img id="teste" src="./img/icones/arrow.svg">
+			</a>
+			<a href="#fotos">
+				<p>Conheça nossos hotéis</p>
+			</a>
 		</div>
 		<section class="bg-inicio" id="bg-inicio">
 			<div class="bg-destaque">
@@ -35,14 +40,16 @@
 			</div>
 		</section>
 		<section class="bg-fotos">
+			<div id="fotos"></div>
 
 			<h1>Hotéis Parceiros</h1>
 			<h2>Sol das Caldas</h2>
 			<div class="fotos">
-				<div id="img1"></div>
+				<img src="img/fotos-sol/fotosc (17).JPG" id="img1" alt="">
+				<a onclick="mostraCarousel()" id="carouselb">Veja mais fotos</a>
 				<div class="fotos2">
-					<div id="img2"></div>
-					<div id="img2"></div>
+					<img src="img/fotos-sol/fotosc (5).jpg" id="img2" alt="">
+					<img src="img/fotos-sol/fotosc (6).jpg" id="img2" alt="">
 				</div>
 			</div>
 
@@ -50,6 +57,7 @@
 		</section>
 
 		<section class="redes">
+			<div id="contato"></div>
 
 			<div class="flex-icons"><img src="./img/icones/insta.svg">
 				<p>Instagram</p>
@@ -63,6 +71,41 @@
 
 		</section>
 
+
+		<div class="slide-cont hidden">
+			<div class="slide">
+				<div class="img-carousel">
+					<img src="img/fotos-sol/fotosc (17).jpg" alt="">
+				</div>
+				<div class="img-carousel">
+					<img src="img/fotos-sol/fotosc (5).jpg" alt="">
+				</div>
+				<div class="img-carousel">
+					<img src="img/fotos-sol/fotosc (6).jpg" alt="">
+				</div>
+				<div class="img-carousel">
+					<img src="img/fotos-sol/fotosc (9).jpg" alt="">
+				</div>
+				<div class="img-carousel">
+					<img src="img/fotos-sol/fotosc (12).jpg" alt="">
+				</div>
+				<div class="img-carousel">
+					<img src="img/fotos-sol/fotosc (14).jpg" alt="">
+				</div>
+				<div class="img-carousel">
+					<img src="img/fotos-sol/fotosc (17).jpg" alt="">
+				</div>
+				<div class="img-carousel">
+					<img src="img/fotos-sol/fotosc (5).jpg" alt="">
+				</div>
+			</div>
+			<div class="slider-btn-container">
+				<button class="slider-btn slider-btn-left"><img src="img/icones/angle-left-svgrepo-com.svg" alt=""></button>
+				<button class="slider-btn slider-btn-right"> <img src="img/icones/angle-right-svgrepo-com.svg" alt=""></button>
+
+			</div>
+			<a class="close" onclick="fechaCarousel()"><img src="img/icones/close-svgrepo-com (1).svg"></a>
+		</div>
 
 	</main>
 

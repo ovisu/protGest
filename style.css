@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,400;1,800&display=swap");
 
+/* animação tela inicial/tela-fotos */
 @keyframes puladiv {
   0% {
     transform: translateY(0px);
@@ -24,7 +25,7 @@ body {
   padding: 0px;
   border: 0px;
 }
-
+/*configs header*/
 header {
   width: 100vw;
   height: 50px;
@@ -55,17 +56,19 @@ nav ul {
 nav ul li {
   list-style: none;
 }
-main {
-  position: relative;
-  background-image: url(img/WhatsApp\ Image\ 2023-10-05\ at\ 12.54.22.jpeg);
-  background-size: cover;
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
 }
+
 .logo {
   font-size: 2rem;
   justify-self: center;
   font-family: "Allura";
   line-height: 50px;
 }
+/*configs tela inicial */
 
 .bg-inicio {
   background-image: url(./img/pexels-karolina-grabowska-6634154.jpg);
@@ -88,35 +91,6 @@ main {
   font-size: 2.25rem;
   font-weight: 300;
 }
-.bg-fotos {
-  background-image: url(img/WhatsApp\ Image\ 2023-10-05\ at\ 12.54.22.jpeg);
-  background-size: cover;
-  background-position-y: center;
-  background-position-x: 60px;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
-  color: #1a191a;
-
-  position: relative;
-}
-
-.bg-fotos h1 {
-  font-family: Poppins;
-  font-weight: normal;
-  font-size: 2.25rem;
-
-  padding: 50px 0px 15px 60px;
-}
-
-.bg-fotos h2 {
-  font-family: Poppins;
-  font-weight: normal;
-  font-size: 1.5rem;
-  padding: 0px 0px 25px 60px;
-  color: #1a191a;
-}
-
 .bg-destaque {
   height: inherit;
   display: flex;
@@ -156,10 +130,46 @@ main {
   color: #8d8a8f;
 }
 .alinha-img:hover ~ .bg-inicio {
-  animation: puladiv 2.5s ease-in-out 0s infinite normal none;
+  animation: puladiv 1.5s ease-in-out 0s infinite normal none;
 }
 .alinha-img:hover ~ .bg-fotos {
-  animation: puladiv 2.5s ease-in-out 0s infinite normal none;
+  animation: puladiv 1.5s ease-in-out 0s infinite normal none;
+}
+
+/*config tela-fotos*/
+main {
+  position: relative;
+  background-image: url(img/WhatsApp\ Image\ 2023-10-05\ at\ 12.54.22.jpeg);
+  background-size: cover;
+}
+
+.bg-fotos {
+  background-image: url(img/WhatsApp\ Image\ 2023-10-05\ at\ 12.54.22.jpeg);
+  background-size: cover;
+  background-position-y: center;
+  background-position-x: 63px;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  color: #1a191a;
+
+  position: relative;
+}
+
+.bg-fotos h1 {
+  font-family: Poppins;
+  font-weight: normal;
+  font-size: 2.25rem;
+
+  padding: 50px 0px 15px 60px;
+}
+
+.bg-fotos h2 {
+  font-family: Poppins;
+  font-weight: normal;
+  font-size: 1.5rem;
+  padding: 0px 0px 25px 60px;
+  color: #1a191a;
 }
 
 .fotos {
@@ -167,6 +177,8 @@ main {
   grid-template-columns: min-content min-content;
   gap: 10px;
   margin: 0px 0px 50px 60px;
+  position: relative;
+  width: fit-content;
 }
 
 .fotos2 {
@@ -202,11 +214,25 @@ main {
 
 #img2 {
   background-color: gray;
-  width: 300px;
+  width: 350px;
   height: 195px;
   border-radius: 5px;
 }
 
+#carouselb {
+  position: absolute;
+  bottom: 0;
+  right: 37.5%;
+
+  color: white;
+  font-family: Poppins;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px 5px;
+  border-radius: 5px 0px 5px 0px;
+
+  cursor: pointer;
+}
+/*configs tela-contato*/
 .redes {
   width: 100vw;
   height: 95vh;
@@ -232,4 +258,79 @@ main {
   font-size: 1.5rem;
   font-family: Poppins;
   color: white;
+}
+
+/* slider */
+
+.slide-cont {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  position: absolute;
+
+  top: 33.9%;
+
+  overflow: hidden;
+  display: flex;
+  gap: 500px;
+
+  align-items: center;
+}
+.slide {
+  display: flex;
+  align-items: center;
+
+  width: 100vw;
+  position: relative;
+}
+.img-carousel {
+  width: 100vw;
+  height: 100vh;
+}
+.img-carousel img {
+  width: 100vw;
+  height: 100vh;
+}
+.slider-btn-container {
+  position: absolute;
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  align-items: center;
+}
+
+.slider-btn {
+  position: absolute;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.slider-btn img {
+  width: 60px;
+  height: auto;
+}
+.slider-btn-right {
+  right: 20px;
+  z-index: 50;
+}
+.slider-btn-left {
+  left: 10px;
+}
+.close {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  cursor: pointer;
+}
+.close img {
+  width: 40px;
+}
+
+.hidden {
+  display: none;
+}
+
+.menu-dest {
+  color: #8d8a8f !important;
 }

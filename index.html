@@ -7,107 +7,89 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/83dc4fb3bd.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 	<header>
+		<div class="container-menu">
 
-		<nav>
-			<p class="logo">Santos</p>
+			<p id="logo">Santos</p>
 
-			<ul>
-				<li><a href="#inicio" class="inicio">INICIO</a></li>
-				<li><a href="#fotos" class="foto">FOTOS</a></li>
-				<li><a href="#contato" class="contato">CONTATO</a></li>
-			</ul>
-		</nav>
+			<nav>
+				<ul class="menu-desk">
+					<li>INICIO</li>
+					<li>FOTOS</li>
+					<li>CONTATO</li>
+				</ul>
+				<img src="icons/Group 1.svg" class="menu-mob">
+			</nav>
+		</div>
+
 	</header>
 	<main>
-		<div id="inicio"></div>
-		<div class="alinha-img">
-			<a href="#fotos">
-				<img id="teste" src="./img/icones/arrow.svg">
-			</a>
-			<a href="#fotos">
-				<p>Conheça nossos hotéis</p>
-			</a>
-		</div>
-		<section class="bg-inicio" id="bg-inicio">
-			<div class="bg-destaque">
+		<section class="inicio">
+			<div class="text-wrapper">
 				<h1>Santos</h1>
-				<h2>Gestão e assessoria empresarial</h2>
-
-			</div>
-		</section>
-		<section class="bg-fotos">
-			<div id="fotos"></div>
-
-			<h1>Hotéis Parceiros</h1>
-			<h2>Sol das Caldas</h2>
-			<div class="fotos">
-				<img src="./img/fotos-sol/fotosc (17).jpg" id="img1" alt="">
-				<a onclick="mostraCarousel()" id="carouselb">Veja mais fotos</a>
-				<div class="fotos2">
-					<img src="./img/fotos-sol/fotosc (5).jpg" id="img2" alt="">
-					<img src="./img/fotos-sol/fotosc (6).jpg" id="img2" alt="">
-				</div>
+				<h3>Gestão e assessoria empresarial</h2>
 			</div>
 
+
+			<div class="jump-wrapper">
+				<img src="icons/Arrow 2.svg">
+				<p>Venha conhecer nossos Hotéis</p>
+			</div>
 
 		</section>
-
-		<section class="redes">
-			<div id="contato"></div>
-
-			<div class="flex-icons"><img src="./img/icones/insta.svg">
-				<p>Instagram</p>
+		<section class="fotos-section">
+			<div class="container">
+				<h2>Hotéis Parceiros</h2>
+				<h3>Sol das Caldas</h3>
+				<div class="fotos">
+					<div class="itens-fotos image1"><img src="./img/fotosc (5).jpg" alt="" class="image1"></div>
+					<div class="itens-fotos"><img src="./img/fotosc (5).jpg" alt=""></div>
+					<div class="itens-fotos"><img src="./img/fotosc (5).jpg" alt=""></div>
+					<div class="itens-fotos hidden"><img src="./img/fotosc (5).jpg" alt=""></div>
+					<div class="itens-fotos hidden"><img src="./img/fotosc (5).jpg" alt=""></div>
+					<div class="itens-fotos hidden"><img src="./img/fotosc (5).jpg" alt=""></div>
+					<div class="itens-fotos hidden"><img src="./img/fotosc (5).jpg" alt=""></div>
+					<div class="itens-fotos hidden"><img src="./img/fotosc (5).jpg" alt=""></div>
+					<p></p>
+					<p>Veja mais <i class="fa-solid fa-plus"></i></i></p>
+				</div>
 			</div>
-			<div class="flex-icons"><img src="./img/icones/email.svg">
-				<p>E-Mail</p>
+
+		</section>
+		<section class="contato">
+			<h2>Entre em contato</h2>
+
+			<div class="container-icons">
+				<div class="icons-wrapper">
+					<img src="icons/insta.svg" alt="">
+					<p>
+						Instagram
+					</p>
+				</div>
+				<div class="icons-wrapper">
+					<img src="icons/whats.svg" alt="">
+					<p>
+						Whatsapp
+					</p>
+				</div>
+				<div class="icons-wrapper">
+					<img src="icons/email.svg" alt="">
+					<p>
+						Email
+					</p>
+				</div>
 			</div>
-			<div class="flex-icons"><img src="./img/icones/whats.svg">
-				<p>Whatsapp</p>
 
 
 		</section>
-
-
-		<div class="slide-cont hidden">
-			<div class="slide">
-				<div class="img-carousel">
-					<img src="img/fotos-sol/fotosc (17).jpg" alt="">
-				</div>
-				<div class="img-carousel">
-					<img src="img/fotos-sol/fotosc (5).jpg" alt="">
-				</div>
-				<div class="img-carousel">
-					<img src="img/fotos-sol/fotosc (6).jpg" alt="">
-				</div>
-				<div class="img-carousel">
-					<img src="img/fotos-sol/fotosc (9).jpg" alt="">
-				</div>
-				<div class="img-carousel">
-					<img src="img/fotos-sol/fotosc (12).jpg" alt="">
-				</div>
-				<div class="img-carousel">
-					<img src="img/fotos-sol/fotosc (14).jpg" alt="">
-				</div>
-				<div class="img-carousel">
-					<img src="img/fotos-sol/fotosc (17).jpg" alt="">
-				</div>
-				<div class="img-carousel">
-					<img src="img/fotos-sol/fotosc (5).jpg" alt="">
-				</div>
-			</div>
-			<div class="slider-btn-container">
-				<button class="slider-btn slider-btn-left"><img src="img/icones/angle-left-svgrepo-com.svg" alt=""></button>
-				<button class="slider-btn slider-btn-right"> <img src="img/icones/angle-right-svgrepo-com.svg" alt=""></button>
-
-			</div>
-			<a class="close" onclick="fechaCarousel()"><img src="img/icones/close-svgrepo-com (1).svg"></a>
-		</div>
-
 	</main>
+
+
+
 
 	<script src="script.js"></script>
 </body>

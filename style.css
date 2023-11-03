@@ -18,6 +18,38 @@ ul {
   color: white;
 }
 
+nav {
+  position: absolute;
+
+  right: 5%;
+  bottom: 0;
+  transform: translateY(100%);
+
+  color: transparent;
+}
+
+dialog {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-top: auto;
+
+  overflow-y: hidden;
+
+  border: none;
+
+  background-color: transparent;
+}
+dialog:-internal-dialog-in-top-layer::backdrop {
+  position: fixed;
+  inset: 0px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.scroll-lock {
+  overflow-y: hidden;
+}
+
 .container {
   max-width: 1200px;
   margin-left: auto;
@@ -56,9 +88,41 @@ h1#logo {
 
   width: 1rem;
 }
+
 .menu-desk {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  border: 1px solid #acacac;
+  border-top: none;
+  border-radius: 0px 0px 5px 5px;
+
+  padding: 10px;
+
+  font-size: 0.8rem;
+}
+
+.menu-desk li {
+  border-bottom: 1px solid #bcbcbc;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.menu-desk li:first-child {
+  padding-top: 0.5rem;
+}
+
+.menu-desk li:last-child {
+  border-bottom: none;
+  padding-bottom: 0.5rem;
+}
+
+.hidden-menu {
   display: none;
 }
+
 /*fim barra de menu*/
 
 /*inicio pag inicial*/
@@ -126,21 +190,60 @@ h1#logo {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-content: center;
-  gap: 0.2rem;
+  gap: 0.4rem;
 
   text-align: right;
 }
-.fotos > p {
+.fotos p {
   display: inline-block;
   margin-top: auto;
   margin-bottom: auto;
 }
-.itens-fotos > img {
+.itens-fotos img {
   width: 100%;
   height: fit-content;
   border-radius: 5px;
   display: block;
   min-height: 6rem;
+}
+
+/* ajustes modal*/
+
+.btn-fecha-modal {
+  text-align: right;
+  margin-right: 5%;
+  cursor: pointer;
+
+  color: #fff;
+  font-size: 1rem;
+}
+.btn-abre-modal {
+  cursor: pointer;
+}
+
+/*ajustes caroussel */
+
+.swiper-slide img {
+  width: 90%;
+  height: fit-content;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-pagination-bullet {
+  background: #fff !important;
+  opacity: 0.5 !important;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff !important;
+
+  display: none !important;
 }
 
 /*fim pag de fotos */
@@ -204,16 +307,16 @@ h1#logo {
     gap: 7rem;
   }
   /*alteração inicio*/
-  .text-wrapper > h1 {
+  .text-wrapper h1 {
     font-size: 6rem;
   }
-  .text-wrapper > h3 {
+  .text-wrapper h3 {
     font-size: 1.5rem;
   }
-  .jump-wrapper > img {
+  .jump-wrapper img {
     width: 3rem;
   }
-  .jump-wrapper > p {
+  .jump-wrapper p {
     font-size: 1.1rem;
   }
   /*alteracoes fotos*/
@@ -228,34 +331,37 @@ h1#logo {
   .fotos-section h2 {
     font-size: 2.3rem;
   }
-  .fotos-section > h3 {
+  .fotos-section h3 {
     font-size: 1.3rem;
   }
-  .fotos > p {
+  .fotos p {
     font-size: 1.3rem;
   }
-  .fotos > p > i {
+  .fotos p i {
     font-size: 1.1rem;
   }
 
   .fotos {
     grid-template-columns: 2fr 1fr;
-    row-gap: 0.1rem;
+    gap: 0.1rem;
     margin: 40px 0px 10px 0px;
   }
 
-  .fotos > .image1 {
+  .fotos .image1 {
     grid-row-start: 1;
     grid-row-end: 3;
   }
-  .itens-fotos > p {
+  .itens-fotos p {
     margin-top: 15px;
   }
-  .itens-fotos > img {
+  .itens-fotos img {
     min-height: 10rem;
   }
-  .itens-fotos > img.image1 {
+  .itens-fotos img.image1 {
     min-height: 20rem;
+  }
+  .hidden {
+    display: none;
   }
 
   /*Alteracoes contato*/
@@ -264,18 +370,15 @@ h1#logo {
     gap: 6rem;
   }
 
-  .contato > h2 {
+  .contato h2 {
     font-size: 2.5rem;
   }
 
-  .icons-wrapper > img {
+  .icons-wrapper img {
     width: 2.5rem;
   }
-  .icons-wrapper > p {
+  .icons-wrapper p {
     font-size: 1.5rem;
-  }
-  .hidden {
-    display: none;
   }
 }
 @media (min-width: 64rem) {
@@ -289,14 +392,35 @@ h1#logo {
     top: 50%;
     transform: translateY(-50%);
     right: 5%;
+    bottom: initial;
 
     color: transparent;
   }
   .menu-desk {
     display: flex;
-
+    flex-direction: row;
     gap: 2rem;
+
+    position: initial;
+    padding: initial;
+    font-size: 1rem;
+
+    border: none;
   }
+
+  .menu-desk li {
+    border: none;
+    padding: initial;
+  }
+  .menu-desk li:first-child {
+    border: none;
+    padding: initial;
+  }
+  .menu-desk li:last-child {
+    border: none;
+    padding: initial;
+  }
+
   #logo {
     font-size: 2rem;
   }
@@ -306,9 +430,27 @@ h1#logo {
     min-height: 100vh;
   }
   /*alteracoes fotos*/
+
   .fotos-section {
     min-height: 100vh;
   }
+  .fotos-section h3 {
+    font-size: 1.5rem;
+  }
+
+  /*alteracoes modal*/
+
+  .btn-fecha-modal {
+    font-size: 1.2rem;
+  }
+
+  /*alteracoes carousel*/
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: flex !important;
+  }
+
   /*alteracoes contato*/
   .contato {
     min-height: 100vh;

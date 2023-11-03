@@ -1,97 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/83dc4fb3bd.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
-	<script src="https://kit.fontawesome.com/83dc4fb3bd.js" crossorigin="anonymous"></script>
-</head>
+  <body>
+    <header>
+      <div class="container-menu">
+        <p id="logo">Santos</p>
 
-<body>
-	<header>
-		<div class="container-menu">
+        <nav>
+         
+            <ul class="menu-desk hidden-menu">
+              <li>INICIO</li>
+              <li>FOTOS</li>
+              <li>CONTATO</li>
+            </ul>
+            
+          
+        </nav>
+		<img src="icons/Group 1.svg" class="menu-mob" />
+	</div>
+    </header>
+    <main>
+      <section class="inicio">
+        <div class="text-wrapper">
+          <h1>Santos</h1>
+          <h3>Gestão e assessoria empresarial</h3>
+        </div>
 
-			<p id="logo">Santos</p>
+        <div class="jump-wrapper">
+          <img src="icons/Arrow 2.svg" />
+          <p>Venha conhecer nossos Hotéis</p>
+        </div>
+      </section>
+      <section class="fotos-section">
+        <div class="container">
+          <h2>Hotéis Parceiros</h2>
+          <h3>Sol das Caldas</h3>
+          <div class="fotos">
+            <div class="itens-fotos image1">
+              <img src="./img/fotosc (5).jpg" alt="" class="image1" />
+            </div>
+            <div class="itens-fotos">
+              <img src="./img/fotosc (5).jpg" alt="" />
+            </div>
+            <div class="itens-fotos">
+              <img src="./img/fotosc (5).jpg" alt="" />
+            </div>
+            <div class="itens-fotos hidden">
+              <img src="./img/fotosc (5).jpg" alt="" />
+            </div>
+            <div class="itens-fotos hidden">
+              <img src="./img/fotosc (5).jpg" alt="" />
+            </div>
+            <div class="itens-fotos hidden">
+              <img src="./img/fotosc (5).jpg" alt="" />
+            </div>
+            <div class="itens-fotos hidden">
+              <img src="./img/fotosc (5).jpg" alt="" />
+            </div>
+            <div class="itens-fotos hidden">
+              <img src="./img/fotosc (5).jpg" alt="" />
+            </div>
+            <p></p>
+            <p class="btn-abre-modal">
+              Veja mais <i class="fa-solid fa-plus"></i>
+            </p>
+          </div>
+          <dialog id="modal">
+            <p class="btn-fecha-modal">
+              FECHAR <i class="fa-solid fa-x" style="color: #fff"></i>
+            </p>
+            <div class="swiper">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <img src="img/fotosc (5).jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/fotosc (5).jpg" alt="" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="img/fotosc (5).jpg" alt="" />
+                </div>
+				<div class="swiper-slide">
+					<img src="img/fotosc (5).jpg" alt="" />
+				  </div>
+				  <div class="swiper-slide">
+					<img src="img/fotosc (5).jpg" alt="" />
+				  </div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="swiper-pagination"></div>
 
-			<nav>
-				<ul class="menu-desk">
-					<li>INICIO</li>
-					<li>FOTOS</li>
-					<li>CONTATO</li>
-				</ul>
-				<img src="icons/Group 1.svg" class="menu-mob">
-			</nav>
-		</div>
+              <!-- If we need navigation buttons -->
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </dialog>
+        </div>
+      </section>
+      <section class="contato">
+        <h2>Entre em contato</h2>
 
-	</header>
-	<main>
-		<section class="inicio">
-			<div class="text-wrapper">
-				<h1>Santos</h1>
-				<h3>Gestão e assessoria empresarial</h2>
-			</div>
+        <div class="container-icons">
+          <div class="icons-wrapper">
+            <img src="icons/insta.svg" alt="" />
+            <p>Instagram</p>
+          </div>
+          <div class="icons-wrapper">
+            <img src="icons/whats.svg" alt="" />
+            <p>Whatsapp</p>
+          </div>
+          <div class="icons-wrapper">
+            <img src="icons/email.svg" alt="" />
+            <p>Email</p>
+          </div>
+        </div>
+      </section>
+    </main>
 
-
-			<div class="jump-wrapper">
-				<img src="icons/Arrow 2.svg">
-				<p>Venha conhecer nossos Hotéis</p>
-			</div>
-
-		</section>
-		<section class="fotos-section">
-			<div class="container">
-				<h2>Hotéis Parceiros</h2>
-				<h3>Sol das Caldas</h3>
-				<div class="fotos">
-					<div class="itens-fotos image1"><img src="./img/fotosc (5).jpg" alt="" class="image1"></div>
-					<div class="itens-fotos"><img src="./img/fotosc (5).jpg" alt=""></div>
-					<div class="itens-fotos"><img src="./img/fotosc (5).jpg" alt=""></div>
-					<div class="itens-fotos hidden"><img src="./img/fotosc (5).jpg" alt=""></div>
-					<div class="itens-fotos hidden"><img src="./img/fotosc (5).jpg" alt=""></div>
-					<div class="itens-fotos hidden"><img src="./img/fotosc (5).jpg" alt=""></div>
-					<div class="itens-fotos hidden"><img src="./img/fotosc (5).jpg" alt=""></div>
-					<div class="itens-fotos hidden"><img src="./img/fotosc (5).jpg" alt=""></div>
-					<p></p>
-					<p>Veja mais <i class="fa-solid fa-plus"></i></i></p>
-				</div>
-			</div>
-
-		</section>
-		<section class="contato">
-			<h2>Entre em contato</h2>
-
-			<div class="container-icons">
-				<div class="icons-wrapper">
-					<img src="icons/insta.svg" alt="">
-					<p>
-						Instagram
-					</p>
-				</div>
-				<div class="icons-wrapper">
-					<img src="icons/whats.svg" alt="">
-					<p>
-						Whatsapp
-					</p>
-				</div>
-				<div class="icons-wrapper">
-					<img src="icons/email.svg" alt="">
-					<p>
-						Email
-					</p>
-				</div>
-			</div>
-
-
-		</section>
-	</main>
-
-
-
-
-	<script src="script.js"></script>
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

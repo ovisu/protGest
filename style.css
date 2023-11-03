@@ -42,9 +42,7 @@ dialog {
 }
 
 dialog:focus {
-
   outline: none;
-
 }
 
 dialog:-internal-dialog-in-top-layer::backdrop {
@@ -231,9 +229,9 @@ h1#logo {
 /*ajustes caroussel */
 
 .swiper-slide img {
-  width: 90%;
+  width: 100%;
   height: fit-content;
-  min-height: 18rem;
+  min-height: 10rem;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -446,17 +444,21 @@ h1#logo {
     font-size: 1.5rem;
   }
 
-  /*alteracoes modal*/
-
-  .btn-fecha-modal {
-    font-size: 1.2rem;
-  }
-
   /*alteracoes carousel*/
 
   .swiper-button-next,
   .swiper-button-prev {
     display: flex !important;
+  }
+
+  .swiper-slide img {
+    width: 90%;
+  }
+
+  /*alteracoes modal*/
+
+  .btn-fecha-modal {
+    font-size: 1.2rem;
   }
 
   /*alteracoes contato*/

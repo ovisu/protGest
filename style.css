@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Allura&family=Poppins:wght@400;500&display=swap");
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -8,7 +12,6 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 header,
 nav,
 ul {
@@ -16,6 +19,15 @@ ul {
   display: flex;
   list-style: none;
   color: white;
+}
+
+ul li a {
+  transition: 300ms all ease-in-out;
+}
+
+header {
+  position: fixed;
+  width: 100%;
 }
 
 nav {
@@ -27,7 +39,10 @@ nav {
 
   color: transparent;
 }
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
 dialog {
   margin-left: auto;
   margin-right: auto;
@@ -41,7 +56,7 @@ dialog {
   background-color: transparent;
 }
 
-dialog:focus {
+*:focus {
   outline: none;
 }
 
@@ -49,6 +64,10 @@ dialog:-internal-dialog-in-top-layer::backdrop {
   position: fixed;
   inset: 0px;
   background: rgba(0, 0, 0, 0.5);
+}
+
+.ativo {
+  color: #9c9c9c !important;
 }
 
 .scroll-lock {
@@ -99,7 +118,7 @@ h1#logo {
   flex-direction: column;
   text-align: center;
 
-  border: 1px solid #acacac;
+  border: 1px solid #3d3d3d;
   border-top: none;
   border-radius: 0px 0px 5px 5px;
 
@@ -109,7 +128,7 @@ h1#logo {
 }
 
 .menu-desk li {
-  border-bottom: 1px solid #bcbcbc;
+  border-bottom: 1px solid #3d3d3d;
   width: 100%;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -195,10 +214,12 @@ h1#logo {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-content: center;
+  justify-items: end;
   gap: 0.4rem;
 
   text-align: right;
 }
+
 .fotos p {
   display: inline-block;
   margin-top: auto;
@@ -221,9 +242,18 @@ h1#logo {
 
   color: #fff;
   font-size: 1rem;
+
+  transition: 300ms all ease-in-out;
 }
 .btn-abre-modal {
   cursor: pointer;
+  transition: 300ms all ease-in-out;
+}
+.btn-abre-modal:hover {
+  color: #4d4d4d;
+}
+.btn-fecha-modal:hover {
+  color: #2d2d2d;
 }
 
 /*ajustes caroussel */
@@ -289,11 +319,13 @@ h1#logo {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  transition: 300ms all ease-in-out;
 }
 
-.icons-wrapper img {
-  width: 2rem;
+.icons-wrapper:hover {
+  color: #9c9c9c;
 }
+
 .icons-wrapper p {
   font-size: 1rem;
 }
@@ -434,6 +466,8 @@ h1#logo {
 
   .inicio {
     min-height: 100vh;
+    padding-top: 17rem;
+    gap: 10rem;
   }
   /*alteracoes fotos*/
 

@@ -4,6 +4,20 @@ html {
   scroll-behavior: smooth;
 }
 
+@keyframes puladiv {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-100px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -12,6 +26,11 @@ html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+main {
+  position: relative;
+}
+
 header,
 nav,
 ul {
@@ -28,6 +47,7 @@ ul li a {
 header {
   position: fixed;
   width: 100%;
+  z-index: 2;
 }
 
 nav {
@@ -39,6 +59,7 @@ nav {
 
   color: transparent;
 }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -63,7 +84,7 @@ dialog {
 dialog:-internal-dialog-in-top-layer::backdrop {
   position: fixed;
   inset: 0px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .ativo {
@@ -155,7 +176,7 @@ h1#logo {
   text-align: center;
   color: white;
 
-  background-image: url(./img/marmoredark.jpg);
+  background-image: url("https://ik.imagekit.io/ovisu/Gestora/marmoredark.jpg?updatedAt=1700157033497");
   background-size: cover;
 
   min-height: min-content;
@@ -176,20 +197,43 @@ h1#logo {
   font-size: 1rem;
   font-weight: 100;
 }
+
+.jump-wrapper a {
+  width: max-content;
+  display: inline-block;
+}
+
+.jump-wrapper {
+  pointer-events: all;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
+
+  text-align: center;
+
+  display: none;
+
+  z-index: 1;
+}
 .jump-wrapper img {
   width: 1.5rem;
   height: auto;
+  cursor: pointer;
 }
 .jump-wrapper p {
   font-size: 0.875rem;
   color: #aaaaaa;
+  cursor: pointer;
 }
+
 /*fim pag inicial*/
 
 /*inicio pag de fotos*/
 
 .fotos-section {
-  background-image: url(./img/marmorelight.jpg);
+  background-image: url("https://ik.imagekit.io/ovisu/Gestora/marmorelight.jpg?updatedAt=1700156286770");
   background-size: cover;
 
   min-height: fit-content;
@@ -351,6 +395,9 @@ h1#logo {
   .text-wrapper h3 {
     font-size: 1.5rem;
   }
+  .jump-wrapper {
+    display: initial;
+  }
   .jump-wrapper img {
     width: 3rem;
   }
@@ -402,6 +449,10 @@ h1#logo {
     display: none;
   }
 
+  .swiper-pagination-bullet {
+    width: 12px !important;
+    height: 12px !important;
+  }
   /*Alteracoes contato*/
 
   .contato {
@@ -469,7 +520,27 @@ h1#logo {
     padding-top: 17rem;
     gap: 10rem;
   }
+  .jump-wrapper {
+    top: 25%;
+  }
+  .jump-wrapper:hover ~ .inicio {
+    animation: puladiv 2s ease-in-out 0.2s infinite normal none;
+  }
+  .jump-wrapper:hover ~ .fotos-section {
+    animation: puladiv 2s ease-in-out 0.2s infinite normal none;
+  }
   /*alteracoes fotos*/
+
+  .fotos {
+    grid-template-columns: 3fr 2fr;
+    gap: 0.2rem;
+  }
+  .itens-fotos img.image1 {
+    min-height: 26em;
+  }
+  .itens-fotos img {
+    min-height: 13rem;
+  }
 
   .fotos-section {
     min-height: 100vh;
@@ -487,6 +558,11 @@ h1#logo {
 
   .swiper-slide img {
     width: 90%;
+  }
+  dialog:-internal-dialog-in-top-layer::backdrop {
+    position: fixed;
+    inset: 0px;
+    background: rgba(0, 0, 0, 0.5);
   }
 
   /*alteracoes modal*/
